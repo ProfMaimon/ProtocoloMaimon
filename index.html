@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta + Protcolo - Atleta</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(90deg, #121212, #1e1e1e);
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      margin-bottom: 50px;
+    }
+    /* Headings & Paragraphs */
+    h1 {
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #ffcc00;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #dddddd;
+      text-align: justify;
+    }
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    /* Botões */
+    .cta {
+      margin-top: 30px;
+      padding: 15px 25px;
+      background-color: #ffcc00;
+      color: #121212;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.3s ease-in-out;
+    }
+    .cta:hover {
+      background: #e6b800;
+    }
+    .promo-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #ffcc00;
+      color: black;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+    .promo-button:hover {
+      background-color: #e6b800;
+    }
+    /* Floating WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+    .whatsapp-button:hover {
+      background-color: #1EBE5D;
+      transform: scale(1.1);
+    }
+    .whatsapp-icon {
+      width: 35px;
+      height: 35px;
+    }
+    /* Animação de Pulsação */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .whatsapp-button,
+    .promo-button,
+    .cta-button {
+      animation: pulse 1.5s infinite;
+    }
+    /* Tabelas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ffcc00;
+      text-align: center;
+    }
+    th {
+      background-color: #ffcc00;
+      color: #121212;
+    }
+    td {
+      color: #ffffff;
+    }
+    ul {
+      text-align: left;
+      font-size: 18px;
+      color: #cccccc;
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 95%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 15px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+      }
+      h2 {
+        font-size: 18px;
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 15px;
+      }
+      .promo-button {
+        height: 35px;
+        width: 85%;
+        max-width: 280px;
+        border-radius: 6px;
+        background-color: #FFC107;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+        bottom: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .promo-button span.timer {
+        display: none;
+      }
+      .whatsapp-button {
+        width: 45px;
+        height: 45px;
+      }
+      body {
+        background: linear-gradient(to bottom, #111, #222);
+      }
+      
+ /* Novas regras para telas menores: */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espaço entre os itens */
+  }
+  
+  /* Ajuste responsivo para imagens */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  img[loading="lazy"] {
+    width: 600px;
+    height: 400px;
+  }
+  
+  /* Tabelas com rolagem */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px; /* Para evitar que a tabela fique colada na borda */
+  }
+  
+  table {
+     display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap; /* Impede quebra de linha */
+    border-collapse: collapse;
+    -webkit-overflow-scrolling: touch; /* Suaviza rolagem no mobile */
+  }
+    }
+  </style>
+</head>
+<body>
+  <!-- Script de Verificação de Senha -->
+  <script>
+    const senhaCorreta = "semsegredo";
+    const senha = prompt("Digite a senha para acessar o conteúdo exclusivo:");
+    if (senha !== senhaCorreta) {
+      alert("Acesso negado.");
+      window.location.href = "pagina-publica.html";
+    }
+  </script>
+<div class="container">
+  <h1>Protocolo Atleta</h1>
+  <p>
+    O <span class="highlight">Protocolo Atleta</span> é uma abordagem avançada destinada a atletas que buscam otimizar a perda de peso de maneira eficaz e segura. Este protocolo combina estratégias nutricionais, suplementação específica e orientações de treinamento, visando não apenas a redução da gordura corporal, mas também a manutenção da massa muscular e a melhoria do desempenho atlético.
+  </p>
+  <p>
+    <strong>Importância da Personalização:</strong> As quantidades e componentes devem ser individualizados. Cada atleta possui necessidades específicas baseadas em fatores como composição corporal, modalidade esportiva, intensidade dos treinos e objetivos pessoais. Recomenda-se fortemente a consulta a um profissional de saúde para a elaboração de um plano personalizado.
+  </p>
+  <p>
+    Esse é um exemplo de Protocolo Atleta para <span class="highlight">Emagrecimento + Hipertrofia</span> com foco em alta performance.
+  </p>
+</div>
+
+  <div class="container">
+    <h1>Refeição 1 - 08:00</h1>
+    <table>
+        <tr>
+            <th>Opção</th>
+            <th>Alimentos</th>
+        </tr>
+        <tr>
+            <td>Opção 1</td>
+            <td>Whey protein concentrado (50g), Aveia em flocos finos (80g), Canela em pó (2g)</td>
+        </tr>
+        <tr>
+            <td>Opção 2</td>
+            <td>Ovo de galinha cozido (4 unidades - 200g), Pão francês (50g), Whey protein concentrado (30g)</td>
+        </tr>
+        <tr>
+            <td>Substituição</td>
+            <td>Pão de forma - 2 fatias (50g)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h1>Refeição 2 - 12:00</h1>
+    <table>
+        <tr>
+            <th>Opção</th>
+            <th>Alimentos</th>
+        </tr>
+        <tr>
+            <td>Opção 1</td>
+            <td>Arroz branco cozido (200g), Feijão preto cozido (100g), Filé de peito de frango cru (180g), Beterraba crua (50g), Abobrinha cozida (100g)</td>
+        </tr>
+        <tr>
+            <td>Opção 2</td>
+            <td>Arroz branco cozido (250g), Lombo suíno cru (180g), Cenoura crua (50g), Berinjela cozida (100g)</td>
+        </tr>
+        <tr>
+            <td>Opção 3</td>
+            <td>Macarrão cozido (250g), Filé de peito de frango cru (180g), Molho de tomate (100g), Cenoura crua à vontade</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h1>Refeição 3 - 16:00</h1>
+    <table>
+        <tr>
+            <th>Opção</th>
+            <th>Alimentos</th>
+        </tr>
+        <tr>
+            <td>Opção 1</td>
+            <td>Arroz branco cozido (200g), Lombo suíno (180g), Cenoura crua (50g), Berinjela cozida (100g)</td>
+        </tr>
+        <tr>
+            <td>Opção 2</td>
+            <td>Macarrão cozido (250g), Peito de frango cru (180g), Molho de tomate (100g), Cenoura crua à vontade</td>
+        </tr>
+        <tr>
+            <td>Opção 3</td>
+            <td>Farelo de aveia (80g), Whey protein concentrado (60g), Adoçante sucralose à vontade, Banana prata (100g)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h1>Refeição 4 - 21:00</h1>
+    <table>
+        <tr>
+            <th>Opção</th>
+            <th>Alimentos</th>
+        </tr>
+        <tr>
+            <td>Opção 1</td>
+            <td>Arroz branco cozido (100g), Filé de frango grelhado (220g), Cenoura crua à vontade, Berinjela cozida (200g), Azeite de oliva (10g)</td>
+        </tr>
+        <tr>
+            <td>Substituição</td>
+            <td>Ovo de galinha cozido ou mexido - 2 unidades médias (100g)</td>
+        </tr>
+        <tr>
+            <td>Opção 2</td>
+            <td>Arroz branco cozido (100g), Feijão preto cozido (200g), Filé de frango grelhado (220g), Cenoura crua e tomate à vontade</td>
+        </tr>
+        <tr>
+            <td>Opção 3</td>
+            <td>Pão francês (2 unidades - 100g), Patinho cru (220g), Molho barbecue (30g)</td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <h1>Protocolo</h1>
+    <p><strong>Sempre:</strong></p>
+    <ul>
+        <li>5g Creatina todos os dias</li>
+        <li>1 cápsula de Multivitamínico</li>
+    </ul>
+    <p><strong>Ao acordar:</strong></p>
+    <ul>
+        <li>10-15 ml Vinagre de maçã com água</li>
+        <li>5g Psyllium</li>
+        <li>100mg Teacrina</li>
+    </ul>
+    <p><strong>Antes de Dormir: (Dormir ao menos 6h por noite)</strong></p>
+    <ul>
+        <li>1000mg Berberina</li>
+        <li>100mg 5-HTP</li>
+        <li>1000mg GABA</li>
+        <li>2mg Cetotifeno</li>
+    </ul>
+</div>
+
+<div class="container">
+    <h1>Exemplo de Protocolo</h1>
+    <p><strong>Aplicações 3x na semana:</strong></p>
+    <ul>
+        <li>600mg Testosterona</li>
+        <li>400mg Primobolan</li>
+    </ul>
+</div>
+
+<div class="container">
+    <h1>Final de Semana</h1>
+    <ul>
+        <li>Beber no mínimo 5 litros de água para manter-se saciado.</li>
+        <li><strong>Ref Lixo:</strong>
+            <ul>
+                <li>1200mg Okralin ($$) OU</li>
+                <li>120mg Orlistat 15 minutos antes de uma refeição com muita gordura (caso não lembre, tomar durante).</li>
+            </ul>
+        </li>
+        <li>2 refeições livres na semana até 2500cal</li>
+    </ul>
+</div>
+<div class="container">
+  <h1>Componentes do Protocolo</h1>
+  
+  <h2>Suplementação Básica</h2>
+  <p><strong>1. Creatina</strong></p>
+  <p>
+    A creatina é um dos suplementos mais eficazes para atletas de fisiculturismo, proporcionando os seguintes benefícios:
+  </p>
+  <ul>
+    <li>Aumenta a força em até 8%, melhorando a performance em exercícios como supino e agachamento;</li>
+    <li>Eleva a massa muscular em cerca de 2 kg ao longo de um treinamento de 8 a 12 semanas;</li>
+    <li>Preserva a massa magra durante dietas restritivas, evitando catabolismo e perda de força;</li>
+    <li>Melhora a capacidade de recuperação muscular, reduzindo em até 50% os marcadores de dano muscular pós-exercício;</li>
+    <li>Otimiza a hidratação celular e a síntese proteica, criando um ambiente anabólico ideal para crescimento muscular.</li>
+  </ul>
+  <p>
+    A dosagem recomendada é de 3 a 5 gramas diárias, sendo segura para uso contínuo e sem efeitos adversos significativos para indivíduos saudáveis. <em>(Tua Saúde)</em>
+  </p>
+  
+  <h2>Multivitamínico</h2>
+  <p>
+    Os multivitamínicos são essenciais para atletas de fisiculturismo, pois garantem o equilíbrio nutricional necessário para um desempenho ideal. Seus benefícios incluem:
+  </p>
+  <ul>
+    <li><strong>Vitamina D:</strong> A deficiência pode reduzir a força muscular em até 18%, impactando diretamente no rendimento em treinos de alta intensidade;</li>
+    <li><strong>Magnésio:</strong> Melhora a resistência muscular em até 20%, favorecendo a contração muscular e reduzindo cãibras;</li>
+    <li><strong>Zinco:</strong> Essencial para a síntese proteica e recuperação muscular, otimizando o crescimento e a reparação das fibras musculares;</li>
+    <li><strong>Vitamina C:</strong> Reduz em até 30% o dano muscular induzido pelo treinamento intenso, acelerando a recuperação;</li>
+    <li><strong>Vitaminas do Complexo B:</strong> Fundamentais para o metabolismo energético, convertendo nutrientes em energia para treinos mais eficientes.</li>
+  </ul>
+  <p>
+    A suplementação deve ser ajustada individualmente e orientada por um profissional de saúde para evitar excessos e interações adversas.
+  </p>
+</div>
+<div class="container">
+  <h1>Rotina Matinal</h1>
+  
+  <h2>Vinagre de Maçã</h2>
+  <p>
+    O vinagre de maçã é reconhecido por seus múltiplos benefícios à saúde, especialmente para atletas de fisiculturismo. Seus principais efeitos incluem:
+  </p>
+  <ul>
+    <li>Auxílio na perda de peso: Promove a sensação de saciedade, reduzindo a ingestão calórica diária em até 275 calorias;</li>
+    <li>Controle glicêmico: Diminui os níveis de glicose pós-prandial em até 34%, contribuindo para uma melhor resposta insulínica;</li>
+    <li>Redução do colesterol LDL: Pode reduzir os níveis de colesterol LDL em aproximadamente 13%, favorecendo a saúde cardiovascular;</li>
+    <li>Propriedades antimicrobianas: Possui ação antimicrobiana, auxiliando na prevenção de infecções e promovendo a saúde intestinal;</li>
+    <li>Ação antioxidante: Rico em polifenóis, combate os radicais livres, protegendo as células musculares do estresse oxidativo e potencializando a recuperação pós-treino.</li>
+  </ul>
+  <p>
+    Para atletas, recomenda-se a ingestão de 1 colher de chá diluída em um copo de água, preferencialmente antes das refeições principais. É fundamental consultar um profissional de saúde para adequar a dosagem às necessidades individuais e evitar possíveis efeitos adversos. <em>(Tua Saúde)</em>
+  </p>
+  
+  <h2>Psyllium</h2>
+  <p>
+    O psyllium é uma fibra solúvel extraída das sementes da planta Plantago ovata, oferecendo diversos benefícios para atletas:
+  </p>
+  <ul>
+    <li>Melhoria da saúde intestinal: Pode aumentar a frequência intestinal em até 37%;</li>
+    <li>Controle do colesterol: Reduz os níveis de colesterol LDL em aproximadamente 7%;</li>
+    <li>Regulação da glicemia: Retarda a absorção de carboidratos, auxiliando no controle dos níveis de açúcar no sangue e melhorando a sensibilidade à insulina em até 42%;</li>
+    <li>Aumento da saciedade: Prolonga a sensação de plenitude, podendo reduzir a ingestão calórica diária em cerca de 10%;</li>
+    <li>Auxílio na perda de peso: Pode contribuir para uma redução de até 2,5 kg no peso corporal em 12 semanas.</li>
+  </ul>
+  <p>
+    A dosagem recomendada varia entre 5 a 10 gramas por dia, dissolvidas em água ou suco, consumidas antes das refeições. É essencial manter uma ingestão adequada de líquidos.
+  </p>
+  
+  <h2>Teacrina</h2>
+  <p>
+    A teacrina é um alcaloide encontrado em plantas como a Camellia kucha, oferecendo benefícios significativos para atletas:
+  </p>
+  <ul>
+    <li>Aumento da energia: Pode elevar os níveis de energia em até 25%;</li>
+    <li>Melhoria do foco mental: Associada a um aumento de 15% na capacidade de concentração;</li>
+    <li>Redução da fadiga: Pode diminuir a percepção de esforço em aproximadamente 10%;</li>
+    <li>Estímulo metabólico: Pode acelerar o metabolismo basal em cerca de 6%;</li>
+    <li>Ausência de tolerância: Diferente da cafeína, seus efeitos permanecem consistentes mesmo após uso prolongado.</li>
+  </ul>
+  <p>
+    A dosagem geralmente varia entre 50 a 200 mg por dia, dependendo da individualidade e dos objetivos específicos. Recomenda-se o uso sob orientação profissional.
+  </p>
+</div>
+<div class="container">
+  <h1>Antes de Dormir</h1>
+  <h2>Suplementos para Recuperação Noturna</h2>
+  <p>
+    A seguir, os suplementos recomendados para uso noturno, que auxiliam na recuperação, controle metabólico e melhoria do sono:
+  </p>
+  
+  <h3>6. Berberina</h3>
+  <p>
+    A berberina é um alcaloide com forte efeito metabólico, proporcionando benefícios como:
+  </p>
+  <ul>
+    <li>Reduz os níveis de glicose no sangue em até 25%;</li>
+    <li>Aumenta a captação de glicose pelas células em até 50%;</li>
+    <li>Reduz triglicerídeos em até 35% e colesterol LDL em 21%;</li>
+    <li>Auxilia na perda de peso (redução de até 5% do peso corporal em 12 semanas);</li>
+    <li>Possui efeito anti-inflamatório, reduzindo marcadores como PCR em até 30%.</li>
+  </ul>
+  <p>A dose recomendada é de 1000 mg por dia. <em>(Frontiers in Pharmacology)</em></p>
+  
+  <h3>7. 5-HTP</h3>
+  <p>
+    O 5-HTP auxilia na produção de serotonina, trazendo os seguintes benefícios:
+  </p>
+  <ul>
+    <li>Aumenta a produção de melatonina em até 50% (melhora do sono);</li>
+    <li>Diminui sintomas de estresse em até 30%;</li>
+    <li>Reduz a ingestão calórica em até 10% (controle do apetite);</li>
+    <li>Aumenta a serotonina no cérebro em 40% (bem-estar emocional);</li>
+    <li>Reduz sintomas de depressão leve a moderada em 25%.</li>
+  </ul>
+  <p>A dose recomendada é de 100 mg por dia. <em>(National Library of Medicine)</em></p>
+  
+  <h3>8. GABA</h3>
+  <p>
+    O GABA é um neurotransmissor inibitório que oferece:
+  </p>
+  <ul>
+    <li>Relaxamento muscular (reduz tensão em 20%);</li>
+    <li>Aumento da duração do sono profundo em 25%;</li>
+    <li>Redução dos níveis de cortisol em 18%;</li>
+    <li>Melhoria do humor, promovendo bem-estar.</li>
+  </ul>
+  <p>A dose recomendada é de 1000 mg por dia. <em>(ScienceDirect)</em></p>
+  
+  <h3>9. Cetotifeno</h3>
+  <p>
+    O cetotifeno é utilizado para aumentar a sensibilidade aos receptores beta-adrenérgicos, proporcionando:
+  </p>
+  <ul>
+    <li>Potencialização dos efeitos da efedrina e clenbuterol;</li>
+    <li>Aumento da resposta lipolítica em 15%;</li>
+    <li>Redução da inflamação pulmonar, auxiliando na respiração durante treinos intensos;</li>
+    <li>Melhoria da recuperação muscular.</li>
+  </ul>
+  <p>A dose recomendada é de 2 mg por dia. <em>(PubMed)</em></p>
+  
+  <h3>10. Okralin</h3>
+  <p>
+    Okralin é um suplemento utilizado para o controle do peso e otimização do metabolismo lipídico, com benefícios como:
+  </p>
+  <ul>
+    <li>Reduz a absorção de gorduras em até 30%;</li>
+    <li>Aumenta a sensação de saciedade, ajudando a reduzir a ingestão calórica;</li>
+    <li>Auxilia no controle glicêmico, estabilizando os níveis de açúcar no sangue;</li>
+    <li>Contribui para a perda de peso (redução de 2 a 4 kg em 8 semanas);</li>
+    <li>Melhora a saúde digestiva por meio de fibras que auxiliam na função intestinal.</li>
+  </ul>
+  <p>A dose recomendada varia entre 1200 mg a 2400 mg diários, divididos antes de refeições ricas em gordura. <em>(Byoderma)</em></p>
+</div>
+<div class="container">
+  <h1>Orientações para o Final de Semana</h1>
+  <p><strong>Hidratação:</strong> Consumo mínimo de 5 litros de água por dia para manutenção da saciedade e das funções metabólicas.</p>
+  <p><strong>Refeições Livres:</strong> Permissão de duas refeições livres na semana, com limite de até 2500 calorias cada, para oferecer flexibilidade na dieta.</p>
+  <p><strong>Uso de Inibidores de Absorção de Gordura:</strong> Recomenda-se a utilização de 1200 mg de Okralin ou 120 mg de Orlistat, 15 minutos antes de refeições ricas em gordura, para auxiliar no controle calórico.</p>
+  <h2>Considerações Importantes</h2>
+  <p>
+    A implementação do Protocolo Atleta requer acompanhamento profissional contínuo para monitorar parâmetros de saúde e fazer os ajustes necessários. É imprescindível que o atleta mantenha uma rotina de sono adequada (pelo menos 6 horas diárias) e siga um plano de treinamento alinhado aos objetivos de perda de peso e desempenho.
+  </p>
+  <p>
+    Este protocolo serve como referência e deve ser adaptado às particularidades de cada indivíduo, sempre priorizando a saúde e o bem-estar.
+  </p>
+</div>
+  <div class="container">
+        <h1>CONSULTORIA ONLINE - PHILOBUILDING</h1>
+        <h2>ATENDIMENTO PERSONALIZADO PARA SUA TRANSFORMAÇÃO</h2>
+        <p>Sou <strong>Prof. Maimon Rabetine</strong>, especialista em consultoria esportiva, <strong>pós-graduado em Nutrição Esportiva e Treinamento Esportivo</strong>. Com o <strong>Plano Premium Completo</strong>, você recebe um acompanhamento <strong>exclusivo e estratégico</strong>, garantindo que seus treinos e nutrição estejam <strong>100% otimizados</strong> para sua evolução.</p>
+        
+        <h2>O QUE O PLANO PREMIUM INCLUI?</h2>
+        <ul style="text-align: left; font-size: 18px; color: #cccccc; margin: 20px 0; padding-left: 20px;">
+            <li><span class="highlight">1. Consulta Individual:</span> Atendimento por <strong>videochamada ou formulário</strong> para entender sua rotina e objetivos.</li>
+            <li><span class="highlight">2. Treinamento Estruturado:</span> Planilhas de treino ajustadas ao seu nível, disponibilidade e equipamento.</li>
+            <li><span class="highlight">3. Nutrição Personalizada:</span> Estratégias alimentares adaptadas ao seu metabolismo, rotina e preferências.</li>
+            <li><span class="highlight">4. Protocolo de Suplementação:</span> Direcionamento científico para otimização da performance.</li>
+            <li><span class="highlight">5. Acompanhamento Contínuo:</span> Ajustes quinzenais baseados no seu progresso.</li>
+        </ul>
+        
+        <a href="https://api.whatsapp.com/send/?phone=5521999862195&text=Ol%C3%A1%2C+Maimon%21+Como+funciona+sua+consultoria+individualizada%3F+Tenho+interesse+em+entender+melhor+os+planos+e+agendamentos%21&type=phone_number&app_absent=0" class="cta">Comece sua Transformação Agora!</a>
+    </div>
+  
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=5521999862195&text=Ol%C3%A1%2C+Maimon%21+Gostaria+de+saber+mais+sobre+a+planilha+de+treino.&type=phone_number&app_absent=0" class="whatsapp-button" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+  </a>
+  
+</body>
+</html>
