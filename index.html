@@ -393,110 +393,117 @@
     </p>
   </div>
 
-  <div class="calculator-section">
-    <h2>Calculadora de Macronutrientes Personalizada</h2>
-    <p>Utilize esta calculadora para determinar suas necessidades de macronutrientes com base no seu peso corporal:</p>
+ <div class="calculator-section">
+  <h2>Calculadora de Macronutrientes Personalizada</h2>
+  <p>Utilize esta calculadora para determinar suas necessidades de macronutrientes com base no seu peso corporal:</p>
+  
+  <div class="calculator">
+    <div class="form-group">
+      <label for="weight">Seu peso corporal (kg):</label>
+      <input type="number" id="weight" min="30" max="200" placeholder="Insira seu peso" step="0.1">
+    </div>
     
-    <div class="calculator">
-      <div class="form-group">
-        <label for="weight">Seu peso corporal (kg):</label>
-        <input type="number" id="weight" min="30" max="200" placeholder="Insira seu peso" step="0.1">
-      </div>
-      
-      <button onclick="calculateMacros()" class="calc-button">Calcular Macronutrientes</button>
-      
-      <div class="results" id="results" style="display:none;">
-        <h3>Seus Macronutrientes Diários:</h3>
-        <div class="macro-result">
-          <div class="macro-item">
-            <span class="macro-title">Proteína:</span>
-            <span class="macro-value" id="protein-result">0g</span>
-            <span class="macro-info">(3g/kg para preservação muscular durante déficit)</span>
-          </div>
-          <div class="macro-item">
-            <span class="macro-title">Carboidratos:</span>
-            <span class="macro-value" id="carb-result">0g</span>
-            <span class="macro-info">(2.2g/kg para performance e energia durante treinos)</span>
-          </div>
-          <div class="macro-item">
-            <span class="macro-title">Gorduras:</span>
-            <span class="macro-value" id="fat-result">0g</span>
-            <span class="macro-info">(0.8g/kg para função hormonal adequada)</span>
-          </div>
+    <button onclick="calculateMacros()" class="calc-button">Calcular Macronutrientes</button>
+    
+    <div class="results" id="results" style="display:none;">
+      <h3>Seus Macronutrientes Diários:</h3>
+      <div class="macro-result">
+        <div class="macro-item">
+          <span class="macro-title">Proteína:</span>
+          <span class="macro-value" id="protein-result">0g</span>
+          <span class="macro-info">(3g/kg para preservação muscular durante déficit)</span>
         </div>
-        <p class="calorie-info">Calorias estimadas: <span id="calorie-result">0</span> kcal</p>
+        <div class="macro-item">
+          <span class="macro-title">Carboidratos:</span>
+          <span class="macro-value" id="carb-result">0g</span>
+          <span class="macro-info">(2.2g/kg para performance e energia durante treinos)</span>
+        </div>
+        <div class="macro-item">
+          <span class="macro-title">Gorduras:</span>
+          <span class="macro-value" id="fat-result">0g</span>
+          <span class="macro-info">(0.8g/kg para função hormonal adequada)</span>
+        </div>
       </div>
-  <div class="personalization-section">
-    <h2>Importância da Personalização</h2>
-    <p>
-      <strong>Individualização Metabólica:</strong> Estudos de Hall et al. (2018) demonstram variações de até 20% na taxa metabólica basal entre indivíduos com mesma composição corporal, destacando a necessidade de ajustes personalizados.
-    </p>
-    <p>
-      <strong>Fatores de Ajuste Essenciais:</strong>
-    </p>
-    <ul>
-      <li>Taxa metabólica individual (medida via calorimetria ou estimada)</li>
-      <li>Volume e intensidade de treinamento semanal</li>
-      <li>Histórico nutricional e adaptações metabólicas prévias</li>
-      <li>Composição corporal atual e objetivos específicos</li>
-      <li>Resposta individual à distribuição de macronutrientes</li>
-    </ul>
-    <p>
-      Recomenda-se fortemente a consulta a um nutricionista esportivo qualificado para personalização completa deste protocolo.
-    </p>
-  </div>
+      <p class="calorie-info">Calorias estimadas: <span id="calorie-result">0</span> kcal</p>
+    </div>
+  </div><!-- Fechamento de calculator -->
+</div><!-- Fechamento de calculator-section -->
 
-  <div class="protocol-example">
-    <h2>Exemplo de Protocolo Atleta: </h2>
-    <p>Este é um exemplo para um atleta de 80kg com 15% de gordura corporal, visando perda de gordura + hipertrofia:</p>
+<div class="personalization-section">
+  <h2>Importância da Personalização</h2>
+  <p>
+    <strong>Individualização Metabólica:</strong> Estudos de Hall et al. (2018) demonstram variações de até 20% na taxa metabólica basal entre indivíduos com mesma composição corporal, destacando a necessidade de ajustes personalizados.
+  </p>
+  <p>
+    <strong>Fatores de Ajuste Essenciais:</strong>
+  </p>
+  <ul>
+    <li>Taxa metabólica individual (medida via calorimetria ou estimada)</li>
+    <li>Volume e intensidade de treinamento semanal</li>
+    <li>Histórico nutricional e adaptações metabólicas prévias</li>
+    <li>Composição corporal atual e objetivos específicos</li>
+    <li>Resposta individual à distribuição de macronutrientes</li>
+  </ul>
+  <p>
+    Recomenda-se fortemente a consulta a um nutricionista esportivo qualificado para personalização completa deste protocolo.
+  </p>
+</div>
+
+<div class="protocol-example">
+  <h2>Exemplo de Protocolo Atleta: </h2>
+  <p>Este é um exemplo para um atleta de 80kg com 15% de gordura corporal, visando perda de gordura + hipertrofia:</p>
+  
+  <div class="protocol-details">
+    <div class="macro-plan">
+      <h3>Plano de Macronutrientes</h3>
+      <ul>
+        <li><strong>Proteína:</strong> 240g (3g/kg × 80kg)</li>
+        <li><strong>Carboidratos:</strong> 176g (2.2g/kg × 80kg)</li>
+        <li><strong>Gorduras:</strong> 64g (0.8g/kg × 80kg)</li>
+        <li><strong>Calorias Totais:</strong> 2,240 kcal (240g × 4 + 176g × 4 + 64g × 9)</li>
+      </ul>
+    </div>
     
-    <div class="protocol-details">
-      <div class="macro-plan">
-        <h3>Plano de Macronutrientes</h3>
-        <ul>
-          <li><strong>Proteína:</strong> 240g (3g/kg × 80kg)</li>
-          <li><strong>Carboidratos:</strong> 176g (2.2g/kg × 80kg)</li>
-          <li><strong>Gorduras:</strong> 64g (0.8g/kg × 80kg)</li>
-          <li><strong>Calorias Totais:</strong> 2,240 kcal (240g × 4 + 176g × 4 + 64g × 9)</li>
-        </ul>
-      </div>
-      
-      <div class="timing-strategy">
-        <h3>Estratégia de Distribuição</h3>
-        <ul>
-          <li><strong>Proteínas:</strong> Distribuídas em 3-5 refeições ao longo do dia </li>
-          <li><strong>Carboidratos:</strong> Concentrados no período peritreinamento (60% dos carboidratos 2h antes e após o treino)</li>
-          <li><strong>Gorduras:</strong> Distribuídas nas refeições fora da janela peritreinamento</li>
-          <li><strong>Timing Estratégico:</strong> Última refeição rica em proteínas e baixa em carboidratos para otimizar a lipólise noturna</li>
-        </ul>
-      </div>
-  <script>
-    function calculateMacros() {
-      const weight = parseFloat(document.getElementById('weight').value);
-      
-      if (isNaN(weight) || weight <= 0) {
-        alert("Por favor, insira um peso válido!");
-        return;
-      }
-      
-      // Cálculos baseados nas diretrizes do protocolo
-      const protein = (weight * 3).toFixed(1);
-      const carbs = (weight * 2.2).toFixed(1);
-      const fat = (weight * 0.8).toFixed(1);
-      
-      // Cálculo de calorias
-      const proteinCals = protein * 4;
-      const carbCals = carbs * 4;
-      const fatCals = fat * 9;
-      const totalCals = Math.round(proteinCals + carbCals + fatCals);
-      
-      // Exibir resultados
-      document.getElementById('protein-result').textContent = protein + "g";
-      document.getElementById('carb-result').textContent = carbs + "g";
-      document.getElementById('fat-result').textContent = fat + "g";
-      document.getElementById('calorie-result').textContent = totalCals;
-      document.getElementById('results').style.display = "block";
+    <div class="timing-strategy">
+      <h3>Estratégia de Distribuição</h3>
+      <ul>
+        <li><strong>Proteínas:</strong> Distribuídas em 3-5 refeições ao longo do dia </li>
+        <li><strong>Carboidratos:</strong> Concentrados no período peritreinamento (60% dos carboidratos 2h antes e após o treino)</li>
+        <li><strong>Gorduras:</strong> Distribuídas nas refeições fora da janela peritreinamento</li>
+        <li><strong>Timing Estratégico:</strong> Última refeição rica em proteínas e baixa em carboidratos para otimizar a lipólise noturna</li>
+      </ul>
+    </div>
+  </div><!-- Fechamento de protocol-details -->
+</div><!-- Fechamento de protocol-example -->
+
+<script>
+  function calculateMacros() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    
+    if (isNaN(weight) || weight <= 0) {
+      alert("Por favor, insira um peso válido!");
+      return;
     }
+    
+    // Cálculos baseados nas diretrizes do protocolo
+    const protein = (weight * 3).toFixed(1);
+    const carbs = (weight * 2.2).toFixed(1);
+    const fat = (weight * 0.8).toFixed(1);
+    
+    // Cálculo de calorias
+    const proteinCals = protein * 4;
+    const carbCals = carbs * 4;
+    const fatCals = fat * 9;
+    const totalCals = Math.round(proteinCals + carbCals + fatCals);
+    
+    // Exibir resultados
+    document.getElementById('protein-result').textContent = protein + "g";
+    document.getElementById('carb-result').textContent = carbs + "g";
+    document.getElementById('fat-result').textContent = fat + "g";
+    document.getElementById('calorie-result').textContent = totalCals;
+    document.getElementById('results').style.display = "block";
+  }
+</script>
 </div>
   <div class="container">
     <h1>Refeição 1 - 08:00</h1>
